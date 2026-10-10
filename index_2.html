@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mind &amp; Learning Foundery — Enrichment Beyond the Classroom</title>
+<meta name="description" content="Mind & Learning Foundery — academic tuition, exam practice, counselling and yoga-based wellness for K–8th graders, founded by QCI-certified yoga instructor Priyanka.">
+<meta name="theme-color" content="#2A2874">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --indigo:#2A2874;
+  --indigo-deep:#1B1A55;
+  --lavender:#F5F3FF;
+  --ink:#24224A;
+  --muted:#5E5C85;
+  --sun:#FFC83D;
+  --coral:#FF5E7E;
+  --teal:#14B8A6;
+  --sky:#3D8BFD;
+  --violet:#8E5CF7;
+  --orange:#FF8A3D;
+  --leaf:#22A06B;
+  --radius:22px;
+  --stripe:linear-gradient(90deg,var(--coral),var(--orange),var(--sun),var(--leaf),var(--teal),var(--sky),var(--violet));
+  --display:'Fredoka',system-ui,sans-serif;
+  --body:'Nunito',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:var(--body);color:var(--ink);background:#fff;line-height:1.65;font-size:1.05rem;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.15;font-weight:600}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 14px rgba(42,40,116,.08)}
+header{border-bottom:1px solid #E6E3F7}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem 0}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.logo-badge{height:80px;aspect-ratio:150/124;flex:none;border-radius:16px;padding:3px;background:#fff;border:2px solid var(--sun);box-shadow:0 4px 14px rgba(42,40,116,.15)}
+.logo-badge span{display:block;width:100%;height:100%;border-radius:12px;background:#fff;overflow:hidden}
+.logo-badge img{width:100%;height:100%;object-fit:contain}
+.brand-text strong{display:block;font-family:var(--display);font-size:1.3rem;color:var(--indigo);line-height:1.1}
+.brand-text small{display:block;font-size:.78rem;color:var(--coral);font-weight:700}
+nav ul{display:flex;align-items:center;gap:.25rem;list-style:none}
+nav a.link{display:block;padding:.5rem .85rem;border-radius:999px;text-decoration:none;font-weight:700;color:var(--indigo)}
+nav a.link:hover{background:var(--lavender)}
+.btn{display:inline-block;text-decoration:none;font-family:var(--display);font-weight:600;font-size:1.05rem;padding:.8rem 1.6rem;border-radius:999px;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 6px 16px rgba(255,94,126,.4)}
+.btn-sun{background:var(--sun);color:var(--indigo-deep);box-shadow:0 6px 16px rgba(255,200,61,.4)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.menu-btn{display:none;background:var(--lavender);border:0;border-radius:12px;width:46px;height:46px;cursor:pointer;color:var(--indigo)}
+.menu-btn svg{width:26px;height:26px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;background:
+  radial-gradient(circle at 85% 20%,rgba(255,255,255,.07),transparent 45%),
+  linear-gradient(160deg,var(--indigo) 0%,var(--indigo-deep) 100%);
+  padding:4.5rem 0 5.5rem}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4rem);margin-bottom:1.1rem;font-weight:700}
+.hero h1 .hl{color:var(--sun)}
+.hero p.lead{font-size:1.2rem;max-width:34rem;color:#E8E6FF;margin-bottom:1.8rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem}
+.chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:.4rem .95rem;border-radius:999px;font-size:.92rem;font-weight:700}
+.hero-logo{display:grid;place-items:center;position:relative;padding-bottom:1.6rem}
+.hero-logo .tag{position:absolute;bottom:0;z-index:2;background:var(--sun);color:var(--indigo-deep);font-family:var(--display);font-weight:600;padding:.45rem 1.2rem;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.stamp{position:relative;width:min(420px,84vw);height:auto;aspect-ratio:1;filter:drop-shadow(0 0 40px rgba(255,200,61,.45)) drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.stamp-spin{transform-origin:200px 200px;animation:stampspin 40s linear infinite}
+@keyframes stampspin{to{transform:rotate(360deg)}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;line-height:0}
+.wave svg{display:block;width:100%;height:60px}
+
+/* ---------- Sections ---------- */
+section{padding:5rem 0}
+.alt{background:var(--lavender)}
+.sec-head{max-width:40rem;margin-bottom:2.8rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--indigo);margin-bottom:.7rem}
+.sec-head p{color:var(--muted)}
+.pill{display:inline-block;background:#fff;color:var(--indigo);border:1px solid #D9D5F5;font-weight:800;font-size:.9rem;padding:.25rem .9rem;border-radius:999px;margin-bottom:.9rem}
+.alt .pill{background:#fff}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3.5rem;align-items:center}
+.founder{position:relative;max-width:420px;margin-inline:auto}
+.founder::before{content:"";position:absolute;inset:-14px -14px 14px 14px;border-radius:32px;background:var(--sun)}
+.founder img{position:relative;width:100%;border-radius:28px;border:6px solid #fff;aspect-ratio:758/841;object-fit:cover;box-shadow:0 18px 40px rgba(42,40,116,.25)}
+.founder figcaption{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);background:var(--indigo);color:#fff;font-family:var(--display);padding:.45rem 1.3rem;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px rgba(42,40,116,.35)}
+.about-copy h2{font-size:clamp(1.9rem,4vw,2.7rem);color:var(--indigo);margin-bottom:1rem}
+.about-copy p{margin-bottom:1rem;color:var(--muted)}
+blockquote{margin:1.4rem 0;padding:1.1rem 1.3rem;background:#fff;border-left:6px solid var(--sun);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--display);font-size:1.15rem;color:var(--indigo);font-weight:500;box-shadow:0 6px 18px rgba(42,40,116,.08)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;list-style:none;margin-top:1.4rem}
+.facts li{display:flex;align-items:center;gap:.6rem;font-weight:700;color:var(--indigo);background:#fff;padding:.7rem .9rem;border-radius:16px;box-shadow:0 4px 12px rgba(42,40,116,.07)}
+.facts li i{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#fff;font-size:.9rem}
+
+/* Approach */
+.approach{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.el{background:#fff;border-radius:var(--radius);padding:1.7rem 1.4rem;border:1px solid #E6E3F7;border-bottom:4px solid var(--sun);box-shadow:0 6px 18px rgba(42,40,116,.06)}
+.el .ic{width:58px;height:58px;border-radius:16px;background:var(--lavender);display:grid;place-items:center;font-size:1.8rem;margin-bottom:1rem}
+.el h3{font-size:1.3rem;color:var(--indigo);margin-bottom:.4rem}
+.el p{color:var(--muted);font-size:.98rem}
+
+/* Programs */
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(42,40,116,.08);border:1px solid #E6E3F7;transition:box-shadow .2s}
+.card:hover{box-shadow:0 12px 30px rgba(42,40,116,.15)}
+.card-top{background:var(--lavender);border-top:5px solid var(--sun);color:var(--indigo);padding:1.3rem 1.4rem 1.2rem;display:flex;gap:1rem;align-items:center}
+.card-top .ic{flex:none;width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 3px 10px rgba(42,40,116,.1)}
+.card-top small{display:block;font-weight:700;font-size:.85rem;color:var(--muted);line-height:1.3}
+.card-top h3{font-size:1.55rem}
+.card ul{list-style:none;padding:1.3rem 1.4rem .6rem;flex:1}
+.card li{position:relative;padding-left:1.7rem;margin-bottom:.55rem;font-size:.98rem;color:var(--ink)}
+.card li::before{content:"✓";position:absolute;left:0;top:.18rem;width:1.15rem;height:1.15rem;border-radius:50%;background:var(--coral);color:#fff;font-size:.7rem;font-weight:800;display:grid;place-items:center;line-height:1}
+.best{margin:.4rem 1.2rem 1.2rem;padding:.7rem 1rem;border-radius:14px;background:var(--lavender);color:var(--ink);font-weight:700;font-size:.93rem}
+.best b{color:var(--indigo)}
+
+/* Stories */
+.stories{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.story{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;background:var(--indigo);box-shadow:0 10px 24px rgba(42,40,116,.2);border:4px solid #fff}
+.story img{width:100%;height:100%;object-fit:cover}
+.story::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(27,26,85,.75))}
+.story .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--sun);display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.story .play svg{width:24px;height:24px;margin-left:3px;fill:var(--indigo-deep)}
+.story .time{position:absolute;z-index:2;right:.7rem;bottom:.6rem;background:rgba(255,255,255,.95);color:var(--indigo);font-weight:800;font-size:.8rem;padding:.1rem .6rem;border-radius:999px}
+.more-note{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;background:#fff;border-radius:var(--radius);padding:1.2rem 1.5rem;box-shadow:0 8px 22px rgba(42,40,116,.09)}
+.more-note p{color:var(--muted);max-width:40rem}
+
+/* Contact */
+.contact{background:linear-gradient(160deg,var(--indigo),var(--indigo-deep));color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-120px;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 65%)}
+.contact .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+.contact h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.8rem}
+.contact .intro{color:#E4E2FF;margin-bottom:1.8rem}
+.info{list-style:none;display:grid;gap:1rem}
+.info li{display:flex;gap:.9rem;align-items:flex-start}
+.info .ic{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem}
+.info small{display:block;color:#C9C6FF;font-weight:700}
+.info a{text-decoration:none;font-weight:700;word-break:break-word}
+.info a:hover{text-decoration:underline}
+form{background:#fff;color:var(--ink);border-radius:26px;padding:1.9rem;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;font-weight:800;font-size:.92rem;color:var(--indigo);margin-bottom:.3rem}
+input,textarea{width:100%;font:inherit;padding:.75rem .9rem;border:2px solid #DAD7F5;border-radius:14px;background:var(--lavender);color:var(--ink);margin-bottom:1rem}
+input:focus,textarea:focus{outline:none;border-color:var(--coral);background:#fff}
+textarea{min-height:120px;resize:vertical}
+form .btn{width:100%;font-size:1.15rem}
+.form-note{margin-top:.8rem;font-size:.85rem;color:var(--muted);text-align:center}
+
+/* Footer */
+footer{background:var(--indigo-deep);color:#D9D7FF;padding:3rem 0 1.5rem;position:relative}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.foot .brand-text strong{color:#fff}
+.foot p{margin-top:.9rem;font-size:.95rem;max-width:22rem}
+.foot h4{font-family:var(--display);color:var(--sun);margin-bottom:.7rem;font-size:1.1rem}
+.foot ul{list-style:none;display:grid;gap:.4rem}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;font-size:.88rem;text-align:center}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1020px){
+  .programs{grid-template-columns:repeat(2,1fr)}
+  .approach{grid-template-columns:repeat(2,1fr)}
+  .stories{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .menu-btn{display:grid;place-items:center}
+  nav{position:absolute;left:0;right:0;top:100%;background:#fff;box-shadow:0 14px 24px rgba(42,40,116,.15);display:none;padding:.8rem 1.25rem 1.2rem}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:stretch}
+  nav a.link{padding:.8rem 1rem}
+  nav .btn{text-align:center;margin-top:.4rem}
+  .hero{padding:3rem 0 4.5rem}
+  .hero .wrap,.about-grid,.contact .wrap{grid-template-columns:1fr}
+  .hero-logo{order:-1;margin-bottom:.8rem}
+  .stamp{width:min(270px,70vw)}
+  .hero .copy-col{text-align:center}
+  .hero p.lead{margin-inline:auto}
+  .cta-row,.chips{justify-content:center}
+  section{padding:3.5rem 0}
+  .about-grid{gap:3rem}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot > :first-child{grid-column:1/-1}
+}
+@media (max-width:620px){
+  body{font-size:1rem}
+  .programs,.approach{grid-template-columns:1fr}
+  .stories{grid-template-columns:1fr 1fr;gap:.8rem}
+  .story .play{width:44px;height:44px}
+  .story .play svg{width:18px;height:18px}
+  .row{grid-template-columns:1fr;gap:0}
+  .facts{grid-template-columns:1fr}
+  .brand-text strong{font-size:1rem}
+  .brand-text small{font-size:.7rem}
+  .logo-badge{height:62px}
+  form{padding:1.4rem}
+  .foot{grid-template-columns:1fr}
+  .more-note .btn{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+
+<body id="top">
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Mind &amp; Learning Foundery — home">
+      <div class="logo-badge"><span><img src="https://static.wixstatic.com/media/eea09f_4fc97cb175ba4114aa136e432ea6cece~mv2.jpg" onerror="this.onerror=null;this.src='https://static.wixstatic.com/media/eea09f_4fc97cb175ba4114aa136e432ea6cece~mv2.jpg/v1/fill/w_150,h_124,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_edited.jpg'" alt="Mind &amp; Learning Foundery logo"></span></div>
+      <div class="brand-text"><strong>Mind &amp; Learning Foundery</strong><small>Enrichment Beyond the Classroom</small></div>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="mainNav" aria-label="Main">
+      <ul>
+        <li><a class="link" href="#about">About</a></li>
+        <li><a class="link" href="#approach">Approach</a></li>
+        <li><a class="link" href="#programs">Programs</a></li>
+        <li><a class="link" href="#stories">Stories</a></li>
+        <li><a class="btn btn-coral" href="#register">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <div class="copy-col">
+      <h1>Strong minds are <span class="hl">forged</span>, not found.</h1>
+      <p class="lead">Tuition, counselling and yoga for K–8th graders in Mumbai. Rock-solid concepts, calm minds and steady confidence, built side by side.</p>
+      <div class="cta-row">
+        <a class="btn btn-sun" href="#programs">Explore programs</a>
+        <a class="btn btn-ghost" href="#register">Register your child</a>
+      </div>
+      <div class="chips">
+        <span class="chip">🧘 QCI-certified yoga instructor</span>
+        <span class="chip">🎓 Mumbai University postgraduate</span>
+        <span class="chip">📚 Class 6–10 · SSC / CBSE / ICSE</span>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <svg class="stamp" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Academics, counselling, yoga, meditation">
+        <defs>
+          <path id="circlePath" d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"></path>
+        </defs>
+        <circle cx="200" cy="200" r="196" fill="#2A2874" stroke="#FFC83D" stroke-width="4"></circle>
+        <g class="stamp-spin">
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.5"></circle>
+          <circle cx="200" cy="200" r="118" fill="none" stroke="#FF5E7E" stroke-width="2" stroke-dasharray="2 6"></circle>
+          <text font-family="Fredoka, sans-serif" font-weight="600" font-size="23" letter-spacing="3.5" fill="#FFFFFF" textLength="930" lengthAdjust="spacing">
+            <textPath href="#circlePath" startOffset="0%">ACADEMICS • COUNSELLING • YOGA • MEDITATION •</textPath>
+          </text>
+          <line x1="200" y1="82" x2="200" y2="100" stroke="#FFC83D" stroke-width="2"></line>
+          <line x1="200" y1="300" x2="200" y2="318" stroke="#FFC83D" stroke-width="2"></line>
+          <line x1="82" y1="200" x2="100" y2="200" stroke="#FFC83D" stroke-width="2"></line>
+          <line x1="300" y1="200" x2="318" y2="200" stroke="#FFC83D" stroke-width="2"></line>
+        </g>
+        <text x="200" y="212" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="46" fill="#FFC83D">M&amp;LF</text>
+        <text x="200" y="244" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="18" fill="#FFFFFF">Est. Mumbai</text>
+      </svg>
+      <span class="tag">Medicine-free · Family-led</span>
+    </div>
+  </div>
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q 360 70 720 30 T 1440 30 V60 H0Z" fill="#F5F3FF"/></svg></div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="alt">
+  <div class="wrap about-grid">
+    <figure class="founder">
+      <img src="https://static.wixstatic.com/media/eea09f_4b34cbe9ffbd46b3a90ca3bccdaa5181~mv2.jpg/v1/crop/x_71,y_115,w_758,h_841/fill/w_500,h_575,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/6_edited.jpg" alt="Priyanka, founder of Mind &amp; Learning Foundery" loading="lazy">
+      <figcaption>Founder · Priyanka</figcaption>
+    </figure>
+    <div class="about-copy">
+      <span class="pill">About us</span>
+      <h2>Welcome to Mind &amp; Learning Foundery</h2>
+      <p>Mind &amp; Learning Foundery was founded by Priyanka, a QCI-certified yoga instructor with a deep passion for holistic education and personal growth. She is a Mumbai University postgraduate (2010) and is completing her Diploma in Counselling (Child &amp; Adult).</p>
+      <p>Yoga and meditation changed her life from an early age. They taught her the power of a calm mind and a strong body, and inspired her to build a space where strong academics meet emotional well-being.</p>
+      <blockquote>Strong academics are essential for succeeding in a competitive world, but true potential blooms when nurtured with a balanced, stress-free mind and body.</blockquote>
+      <p>Every child receives caring, encouraging guidance that builds rock-solid concepts, confidence and a positive mindset, through expert teaching, counselling, yoga, meditation and laughter yoga.</p>
+      <ul class="facts">
+        <li><i style="background:var(--indigo)">✓</i>QCI-certified yoga instructor</li>
+        <li><i style="background:var(--indigo)">✓</i>Child &amp; adult counselling (Diploma)</li>
+        <li><i style="background:var(--indigo)">✓</i>Mumbai University, 2010</li>
+        <li><i style="background:var(--indigo)">✓</i>Medicine-free approach</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPROACH ================= -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="pill teal">Our approach</span>
+      <h2>Four elements, one integrated method</h2>
+      <p>Academics and wellbeing are taught together, so children build focus, confidence and calm alongside strong concepts.</p>
+    </div>
+    <div class="approach">
+      <article class="el" style="--c:var(--sky)"><div class="ic">📘</div><h3>Academics</h3><p>Concept-first coaching in Maths &amp; Science with regular practice, worksheets and doubt-solving.</p></article>
+      <article class="el" style="--c:var(--coral)"><div class="ic">💬</div><h3>Counselling</h3><p>One-on-one guidance for children and adults to manage emotions and build resilience.</p></article>
+      <article class="el" style="--c:var(--leaf)"><div class="ic">🧘</div><h3>Yoga &amp; meditation</h3><p>Breathing, posture and stillness practice that sharpens focus and lowers stress.</p></article>
+      <article class="el" style="--c:var(--sun)"><div class="ic">😄</div><h3>Laughter yoga</h3><p>Playful, positive-energy sessions that build a light, joyful relationship with learning.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAMS ================= -->
+<section id="programs" class="alt">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="pill violet">Our programs</span>
+      <h2>Seven programs, one place</h2>
+      <p>Pick one, or combine several for the full Foundery experience.</p>
+    </div>
+    <div class="programs">
+
+      <article class="card c-sky">
+        <div class="card-top"><div class="ic">📐</div><div><small>Tuition classes</small><h3>Learnova</h3></div></div>
+        <ul>
+          <li>Maths coaching with step-by-step explanations</li>
+          <li>Science coaching (Biology + Chemistry) with diagrams &amp; numericals</li>
+          <li>Regular practice + revision plans</li>
+          <li>Chapter-wise tests + doubt solving</li>
+          <li>Board / school exam preparation</li>
+        </ul>
+        <p class="best"><b>Best for:</b> Class 6–10 (SSC/CBSE/ICSE) · Online / Offline</p>
+      </article>
+
+      <article class="card c-teal">
+        <div class="card-top"><div class="ic">📝</div><div><small>Worksheets · test papers · exam papers</small><h3>Concepta</h3></div></div>
+        <ul>
+          <li>Topic-wise &amp; chapter-wise worksheets</li>
+          <li>MCQs, numericals, fill-ups, match the pairs</li>
+          <li>Unit tests &amp; semester pattern papers</li>
+          <li>Board-pattern practice papers</li>
+          <li>Quick revision sheets &amp; formula lists</li>
+        </ul>
+        <p class="best"><b>Best for:</b> consistent practice &amp; exam readiness</p>
+      </article>
+
+      <article class="card c-leaf">
+        <div class="card-top"><div class="ic">🧘</div><div><small>Yoga · meditation · laughter yoga · face yoga</small><h3>Yogic Way</h3></div></div>
+        <ul>
+          <li>Stress relief + calm mind</li>
+          <li>Better concentration and memory</li>
+          <li>Improved posture and breathing</li>
+          <li>Positive energy through laughter yoga</li>
+          <li>Healthy lifestyle habits &amp; balanced living</li>
+        </ul>
+        <p class="best"><b>Suitable for:</b> kids · teens · adults · group / private</p>
+      </article>
+
+      <article class="card c-coral">
+        <div class="card-top"><div class="ic">💬</div><div><small>Counselling &amp; guidance</small><h3>Counsel Nest</h3></div></div>
+        <ul>
+          <li>Exam fear &amp; anxiety support</li>
+          <li>Motivation + goal setting</li>
+          <li>Focus and concentration building</li>
+          <li>Study plan + time management guidance</li>
+          <li>Confidence &amp; self-esteem improvement</li>
+          <li>Parent guidance (if needed)</li>
+        </ul>
+        <p class="best"><b>Best for:</b> emotional support + academic improvement</p>
+      </article>
+
+      <article class="card c-orange">
+        <div class="card-top"><div class="ic">🔬</div><div><small>School projects &amp; models</small><h3>Project Pro</h3></div></div>
+        <ul>
+          <li>Science working / non-working models</li>
+          <li>Charts, PPTs and written projects</li>
+          <li>Maths activities &amp; practical projects</li>
+          <li>EVS / Social Science projects</li>
+          <li>Innovative craft + learning models</li>
+        </ul>
+        <p class="best"><b>Perfect for:</b> school submissions, exhibitions, competitions</p>
+      </article>
+
+      <article class="card c-violet">
+        <div class="card-top"><div class="ic">🔤</div><div><small>Reading &amp; phonics</small><h3>Phonics Pop</h3></div></div>
+        <ul>
+          <li>Letter sounds, blending, digraphs</li>
+          <li>Sight words and sentence reading</li>
+          <li>Story reading + speaking practice</li>
+          <li>Fun worksheets and engaging activities</li>
+          <li>Regular feedback for parents</li>
+        </ul>
+        <p class="best"><b>Best for:</b> Jr KG to Grade 3 learners</p>
+      </article>
+
+      <article class="card c-sun">
+        <div class="card-top"><div class="ic">🧮</div><div><small>Mental maths &amp; brain training</small><h3>Abacus Genius</h3></div></div>
+        <ul>
+          <li>Fast calculation speed</li>
+          <li>Improved memory and visualization</li>
+          <li>Better concentration &amp; discipline</li>
+          <li>Speed and accuracy drills</li>
+          <li>Level-based learning with regular tests</li>
+        </ul>
+        <p class="best"><b>Best for:</b> kids aged 6 to 14 years</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORIES ================= -->
+<section id="stories">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="pill orange">Real stories</span>
+      <h2>Families and students, in their own words</h2>
+      <p>Short video stories from students and parents who have been part of the Foundery.</p>
+    </div>
+    <div class="stories">
+      <div class="story"><img src="https://static.wixstatic.com/media/eea09f_eb84d5657cc24848b10f34d2b484dd7ff002.jpg/v1/fill/w_589,h_332,enc_auto/file.jpeg" alt="Video testimonial 1" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="time">3:06</span></div>
+      <div class="story"><img src="https://static.wixstatic.com/media/eea09f_2d0e768f6c3d4823b211d119e834d3d1f002.jpg/v1/fill/w_589,h_332,enc_auto/file.jpeg" alt="Video testimonial 2" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="time">3:08</span></div>
+      <div class="story"><img src="https://static.wixstatic.com/media/eea09f_9771770488b54d9da5590de644e39e0ff002.jpg/v1/fill/w_589,h_332,enc_auto/file.jpeg" alt="Video testimonial 3" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="time">0:44</span></div>
+      <div class="story"><img src="https://static.wixstatic.com/media/eea09f_44f4016df53f4e74a42912875e4ef8d3f002.jpg/v1/fill/w_589,h_332,enc_auto/file.jpeg" alt="Video testimonial 4" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="time">0:29</span></div>
+    </div>
+    <div class="more-note">
+      <p>We have 7 video stories from our community in total. Ask us and we will share the full collection.</p>
+      <a class="btn btn-coral" href="#register">Ask to see more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="register" class="contact">
+  <div class="wrap">
+    <div>
+      <span class="pill" style="background:var(--sun);color:var(--indigo-deep)">Get in touch</span>
+      <h2>Join us today</h2>
+      <p class="intro">Ask about our programs, register a child, or send a question. We are happy to help.</p>
+      <ul class="info">
+        <li><span class="ic" style="background:rgba(255,255,255,.14)">✉️</span><div><small>Email</small><a href="mailto:priyankaredij@yahoo.co.in">priyankaredij@yahoo.co.in</a></div></li>
+        <li><span class="ic" style="background:rgba(255,255,255,.14)">📞</span><div><small>Phone</small><a href="tel:+18001234567">1-800-123-4567</a></div></li>
+        <li><span class="ic" style="background:rgba(255,255,255,.14)">📍</span><div><small>Address</small>1234 Mindfulness Ave,<br>Learning City, LC 54321</div></li>
+      </ul>
+    </div>
+
+    <form id="contactForm" novalidate>
+      <div class="row">
+        <div><label for="fn">First name *</label><input id="fn" name="first" autocomplete="given-name" required></div>
+        <div><label for="ln">Last name *</label><input id="ln" name="last" autocomplete="family-name" required></div>
+      </div>
+      <label for="em">Email *</label><input id="em" name="email" type="email" autocomplete="email" required>
+      <label for="sb">Subject</label><input id="sb" name="subject">
+      <label for="ms">Message</label><textarea id="ms" name="message"></textarea>
+      <button class="btn btn-coral" type="submit">Send message</button>
+      <p class="form-note" id="formNote">This opens your email app with the message ready to send.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top">
+          <div class="logo-badge"><span><img src="https://static.wixstatic.com/media/eea09f_4fc97cb175ba4114aa136e432ea6cece~mv2.jpg" onerror="this.onerror=null;this.src='https://static.wixstatic.com/media/eea09f_4fc97cb175ba4114aa136e432ea6cece~mv2.jpg/v1/fill/w_150,h_124,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_edited.jpg'" alt="Mind &amp; Learning Foundery logo"></span></div>
+          <div class="brand-text"><strong>Mind &amp; Learning Foundery</strong><small>Enrichment Beyond the Classroom</small></div>
+        </a>
+        <p>Academic and holistic support for K–8th graders, combining expert tuition with yoga, meditation and counselling.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:priyankaredij@yahoo.co.in">priyankaredij@yahoo.co.in</a></li>
+          <li><a href="tel:+18001234567">1-800-123-4567</a></li>
+          <li>Learning City, LC 54321</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 2026 Mind &amp; Learning Foundery. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mainNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }
+  });
+
+  // Contact form: opens the visitor's email app with the message filled in
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, note = document.getElementById('formNote');
+    if (!f.first.value.trim() || !f.last.value.trim() || !f.email.value.trim()) {
+      note.textContent = 'Please fill in first name, last name and email.';
+      note.style.color = '#D6204A';
+      return;
+    }
+    var subject = f.subject.value.trim() || 'Enquiry from website';
+    var body = 'Name: ' + f.first.value.trim() + ' ' + f.last.value.trim() +
+               '\nEmail: ' + f.email.value.trim() + '\n\n' + f.message.value.trim();
+    window.location.href = 'mailto:priyankaredij@yahoo.co.in?subject=' + encodeURIComponent(subject) +
+                           '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
